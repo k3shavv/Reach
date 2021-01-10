@@ -6,10 +6,9 @@ let connectDB=require('./config/db');
 let app=express();
 
 
-//setting up test route
-app.get('/',(req,res)=>{
-    res.send('api is running');
-})
+//INIT middleware(body parser)
+app.use(express.json({extended:false}))
+
 
 //connecting to db
 connectDB();

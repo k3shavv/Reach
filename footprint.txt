@@ -1,0 +1,78 @@
+//backend
+
+1. create the gitignore file(used for excluding files from getting posted on gihub) gitignore this file also ;)
+
+2. start the project by npm init and fill the details
+
+3. create git repository(make the first commit)
+
+4. install backend dependencies:-
+express(library for creating backend)
+mongoose(library for manipulating mongoDB)
+jsonwebtoken(for creating authentication token)
+bcrypt(for encrypting password before storing it to database)
+config(for creating global variables which can be used across files)
+gravatar
+express-validator(for validating the form data)
+request
+
+5.create the server.js file
+include the express
+setup the express app
+setup a route for testing 
+setup the backend
+
+6.create config folder
+inside the config create default.json file which will contain the db key and will be available globally
+
+7.create the db.js file inside config folder (we are not appending this to the server.js file to reduce mess)
+require mongoose,config(for the mongoURI) 
+make a function to connect to db
+and then export this file so that we can use this on the server.js file
+require db.js file on server.js and then connect to the database
+--**NOW the database is successfully connected**--
+
+
+8. create a route folder (route/api) which will contain all the related routes on seperate files to reduce mess
+create different route files (users, posts, profile,auth)
+create test routes(use express router for creating mini app)
+create a test route using router.get() for each route file
+and then export the router of each file so that we can use them on server.js using app.use 
+test the routes with postman
+
+
+9.Create User model and export it
+
+10.create the user Post route for user registration
+set up express body parser
+set up validation of data
+
+11. Register the user 
+bring the User Model
+see if user already exist if it exist end the process (res.status(400)) otherwise move forward
+create a new instance of user( using new User())
+get user gravatar (include bcrypt)  
+encrypt password
+return a json web token (json web token is used for authorizing users)
+
+12 create a middleware to verify the token returned(to access protected routes) 
+create a new folder (named middleware)
+apply middleware to the auth routes and return the users data
+
+13 create the user login route(auth route)
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
